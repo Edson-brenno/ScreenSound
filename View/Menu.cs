@@ -47,7 +47,7 @@ namespace ScreenSound.View.Menu{
                         throw new IsNotValidOptionException(opcao);
                     }
                     else if (Char.IsDigit(opcao[0]) == true && int.Parse(opcao) > 5) {
-                        throw new IsNotValidOptionException();
+                        throw new IsNotValidOptionException(opcao);
                     }
                     else{
                         continuaEscolhaOpcao = false;

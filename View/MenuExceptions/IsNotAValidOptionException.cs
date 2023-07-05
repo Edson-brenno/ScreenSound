@@ -5,6 +5,6 @@ namespace ScreenSound.View.MenuException{
             System.Console.WriteLine("Opção Inválida");
         }
 
-        public IsNotValidOptionException(string message) : base(message){}
+        public IsNotValidOptionException(string message) : base($"A opção {message} é inválida"){}
     }
 }

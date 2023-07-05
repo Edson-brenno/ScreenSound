@@ -1,5 +1,6 @@
 ﻿using System;
 using ScreenSound.View;
+using ScreenSound.View.Menu;
 
 namespace ScreenSound{
     public class ScreenSound{
@@ -14,7 +15,7 @@ namespace ScreenSound{
             }
             catch(Exception e){
 
-                Console.WriteLine(e.Message);
+                Console.WriteLine(e);
 
             }
         }
