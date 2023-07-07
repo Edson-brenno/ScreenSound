@@ -59,7 +59,7 @@ namespace ScreenSound.View.Menu{
 
             switch(int.Parse(opcao)){
                 case 1:
-                    RegistrarBanda registroBanda = new RegistrarBanda();
+                    RegistrarBandaView registroBanda = new RegistrarBandaView();
 
                     registroBanda.PerguntaNomeBanda();
                     break;

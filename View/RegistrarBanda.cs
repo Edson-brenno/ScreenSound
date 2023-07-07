@@ -2,7 +2,7 @@ using System.Dynamic;
 using ScreenSound.View.Exceptions;
 
 namespace ScreenSound.View{
-    public class RegistrarBanda{
+    public class RegistrarBandaView{
 
         private string nomeBanda = "";
         public void PerguntaNomeBanda(){
@@ -32,8 +32,8 @@ namespace ScreenSound.View{
             }            
         }
 
-        public Boolean DoesNomeExists(){
-            return false;
+        public void RegistrarBanda(){
+            
         }
 
     }
