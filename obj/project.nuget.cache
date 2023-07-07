@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "l7GT0XRYfhU9tEkxHiUAbJ22RT6hP2n9fYdYd8eo3Sgi2GHlJMe6AgtTNoCOgvOeYZDu0oPAHo4bZDO1CHfa3Q==",
+  "dgSpecHash": "fmZx9Iu6tovOmN1+b21pzI65pT6BICh5J36NYrkwi38URjyFbExNk3Ww1BNekFrcr4QS1E9OgakEONgs7zNSZA==",
   "success": true,
   "projectFilePath": "C:\\Users\\brenno\\Documents\\bre\\ScreenSound\\ScreenSound.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\brenno\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
+  ],
   "logs": []
 }

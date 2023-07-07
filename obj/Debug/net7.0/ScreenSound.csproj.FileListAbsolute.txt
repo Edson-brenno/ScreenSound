@@ -28,3 +28,5 @@ C:\Users\brenno\Documents\bre\ScreenSound\obj\Debug\net7.0\refint\ScreenSound.dl
 C:\Users\brenno\Documents\bre\ScreenSound\obj\Debug\net7.0\ScreenSound.pdb
 C:\Users\brenno\Documents\bre\ScreenSound\obj\Debug\net7.0\ScreenSound.genruntimeconfig.cache
 C:\Users\brenno\Documents\bre\ScreenSound\obj\Debug\net7.0\ref\ScreenSound.dll
+C:\Users\brenno\Documents\bre\ScreenSound\bin\Debug\net7.0\Newtonsoft.Json.dll
+C:\Users\brenno\Documents\bre\ScreenSound\obj\Debug\net7.0\ScreenSound.csproj.CopyComplete
