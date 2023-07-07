@@ -1,10 +1,13 @@
+using System.Dynamic;
+using ScreenSound.View.Exceptions;
+
 namespace ScreenSound.View{
     public class RegistrarBanda{
-        private string PerguntarBanda(){
+
+        private string nomeBanda = "";
+        public void PerguntarBanda(){
             
             bool continuaPergunta = true;
-
-            string nomeBanda = "";
 
             while (continuaPergunta == true){
                 
@@ -12,16 +15,22 @@ namespace ScreenSound.View{
                     
                     System.Console.Write("Digite o nome da banda a ser registrado: ");
 
-                    nomeBanda = System.Console.ReadLine();
+                    string nome = System.Console.ReadLine();
+
+                    if (String.IsNullOrEmpty(nome) || String.IsNullOrWhiteSpace(nome)){
+                        throw new IsNUllException();
+                    }
+                    else{
+                        this.nomeBanda = nome;
+                        continuaPergunta = false;
+                    }
 
                 }catch(Exception ex){
                     System.Console.WriteLine(ex.Message);
                 }
 
-            }
-
-            return nomeBanda;
-            
+            }            
         }
+
     }
 }

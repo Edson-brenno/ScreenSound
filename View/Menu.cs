@@ -59,7 +59,9 @@ namespace ScreenSound.View.Menu{
 
             switch(int.Parse(opcao)){
                 case 1:
-                    System.Console.WriteLine("Registrando banda");
+                    RegistrarBanda registroBanda = new RegistrarBanda();
+
+                    registroBanda.PerguntarBanda();
                     break;
                 case 2:
                     System.Console.WriteLine("Mostrando bandas registradas");
