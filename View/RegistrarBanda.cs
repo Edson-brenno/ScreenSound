@@ -5,7 +5,7 @@ namespace ScreenSound.View{
     public class RegistrarBanda{
 
         private string nomeBanda = "";
-        public void PerguntarBanda(){
+        public void PerguntaNomeBanda(){
             
             bool continuaPergunta = true;
 
@@ -30,6 +30,10 @@ namespace ScreenSound.View{
                 }
 
             }            
+        }
+
+        public Boolean DoesNomeExists(){
+            return false;
         }
 
     }

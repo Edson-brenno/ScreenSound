@@ -4,7 +4,7 @@ using Newtonsoft.Json;
 using System.Security.Cryptography.X509Certificates;
 
 namespace ScreenSound.Controller{
-    public class RegistrarBanda{
+    public class RegistrarBandaController{
 
         public static void Registrar(){
             Banda banda = new Banda();
