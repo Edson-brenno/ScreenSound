@@ -1,8 +1,7 @@
 // ScreenSounds Menu
 
 //Menu exceptions:
-using System.Diagnostics;
-using System.Runtime.InteropServices;
+using ScreenSound.Model;
 using ScreenSound.View.MenuException;
 
 namespace ScreenSound.View.Menu{
@@ -60,7 +59,7 @@ namespace ScreenSound.View.Menu{
 
             switch(int.Parse(opcao)){
                 case 1:
-                    System.Console.WriteLine("Registrando uma banda");
+                    RegistrarBanda.Registrar();
                     break;
                 case 2:
                     System.Console.WriteLine("Mostrando bandas registradas");
