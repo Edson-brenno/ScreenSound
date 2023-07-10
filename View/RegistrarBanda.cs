@@ -1,4 +1,5 @@
 using System.Dynamic;
+using ScreenSound.Controller;
 using ScreenSound.View.Exceptions;
 
 namespace ScreenSound.View{
@@ -32,8 +33,9 @@ namespace ScreenSound.View{
             }            
         }
 
-        public void RegistrarBanda(){
+        public void SalvarNomeBanda(){
             
+            System.Console.WriteLine(RegistrarBandaController.DoesNomeBandaExists(this.nomeBanda));
         }
 
     }

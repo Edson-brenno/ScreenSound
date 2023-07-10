@@ -62,6 +62,8 @@ namespace ScreenSound.View.Menu{
                     RegistrarBandaView registroBanda = new RegistrarBandaView();
 
                     registroBanda.PerguntaNomeBanda();
+
+                    registroBanda.SalvarNomeBanda();
                     break;
                 case 2:
                     System.Console.WriteLine("Mostrando bandas registradas");

@@ -1,4 +1,5 @@
 ﻿using System;
+using ScreenSound.Configuracao;
 using ScreenSound.View;
 using ScreenSound.View.Menu;
 
@@ -7,6 +8,11 @@ namespace ScreenSound{
         public static void Main(){
             
             try{
+
+                if (!ConfiguracaoScreenSound.JaFoiConfigurado()){
+                    ConfiguracaoScreenSound.Configurar();
+                }
+
                 ApresentacaoScreenSound.EscreveScreenSound();
 
                 Menu menu = new Menu();

@@ -22,22 +22,21 @@ namespace ScreenSound.Controller{
             t2.ForEach(x => Console.WriteLine(x));
         }
 
-        public static bool DoesNomeBandaExists(string nome){
+        public static bool DoesNomeBandaExists(string nomeBanda){
             
-            if(!File.Exists("tt.json")){
-                return false;
-            }
-            else{
-                using (StreamReader r = new StreamReader("tt.json")){
-                    string jsonFile = r.ReadToEnd();
+            using (StreamReader r = new StreamReader("tt.json")){
+                string jsonFile = r.ReadToEnd();
 
-                    List<Banda> bandas = JsonConvert.DeserializeObject<List<Banda>>(jsonFile);
+                List<Banda> bandas = JsonConvert.DeserializeObject<List<Banda>>(jsonFile);
 
-                    System.Console.WriteLine(bandas);
+                if (bandas.Exists(elementos => String.Equals(elementos, nomeBanda))){
+                    return true;
+                }
+                else{
+                    return false;
                 }
             }
             
-            return false;
         }
 
         public static bool ArquivoNomeBandaJsonExist(){

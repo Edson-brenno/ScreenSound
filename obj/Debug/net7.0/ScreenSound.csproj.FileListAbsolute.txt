@@ -30,3 +30,5 @@ C:\Users\brenno\Documents\bre\ScreenSound\obj\Debug\net7.0\ScreenSound.genruntim
 C:\Users\brenno\Documents\bre\ScreenSound\obj\Debug\net7.0\ref\ScreenSound.dll
 C:\Users\brenno\Documents\bre\ScreenSound\bin\Debug\net7.0\Newtonsoft.Json.dll
 C:\Users\brenno\Documents\bre\ScreenSound\obj\Debug\net7.0\ScreenSound.csproj.CopyComplete
+C:\Users\brenn\Documents\alura\ScreenSound\bin\Debug\net7.0\Newtonsoft.Json.dll
+C:\Users\brenn\Documents\alura\ScreenSound\obj\Debug\net7.0\ScreenSound.csproj.CopyComplete

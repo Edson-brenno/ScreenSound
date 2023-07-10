@@ -55,19 +55,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\brenno\\.nuget\\packages\\": {}
+    "C:\\Users\\brenn\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\brenno\\Documents\\bre\\ScreenSound\\ScreenSound.csproj",
+      "projectUniqueName": "c:\\Users\\brenn\\Documents\\alura\\ScreenSound\\ScreenSound.csproj",
       "projectName": "ScreenSound",
-      "projectPath": "C:\\Users\\brenno\\Documents\\bre\\ScreenSound\\ScreenSound.csproj",
-      "packagesPath": "C:\\Users\\brenno\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\brenno\\Documents\\bre\\ScreenSound\\obj\\",
+      "projectPath": "c:\\Users\\brenn\\Documents\\alura\\ScreenSound\\ScreenSound.csproj",
+      "packagesPath": "C:\\Users\\brenn\\.nuget\\packages\\",
+      "outputPath": "c:\\Users\\brenn\\Documents\\alura\\ScreenSound\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\brenno\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\brenn\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net7.0"
