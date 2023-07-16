@@ -5,7 +5,7 @@ using ScreenSound.View.Exceptions;
 namespace ScreenSound.View{
     public class RegistrarBandaView{
 
-        private string nomeBanda = "";
+        public string NomeBanda {get;set;}
         public void PerguntaNomeBanda(){
             
             bool continuaPergunta = true;
@@ -22,7 +22,7 @@ namespace ScreenSound.View{
                         throw new IsNUllException();
                     }
                     else{
-                        this.nomeBanda = nome;
+                        this.NomeBanda = nome;
                         continuaPergunta = false;
                     }
 
@@ -33,9 +33,10 @@ namespace ScreenSound.View{
             }            
         }
 
+
         public void SalvarNomeBanda(){
             
-            System.Console.WriteLine(RegistrarBandaController.DoesNomeBandaExists(this.nomeBanda));
+            System.Console.WriteLine(RegistrarBandaController.DoesNomeBandaExists(this.NomeBanda));
         }
 
     }
