@@ -55,14 +55,5 @@ namespace ScreenSound.Controller{
             
         }
 
-        public static bool ArquivoNomeBandaJsonExist(){
-
-            if(File.Exists("bandas.json")){
-                return true;
-            }
-            else{
-                return false;
-            }
-        }
     }
 }
