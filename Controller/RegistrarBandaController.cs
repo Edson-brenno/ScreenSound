@@ -6,20 +6,17 @@ using System.Runtime.InteropServices;
 
 namespace ScreenSound.Controller{
     public class RegistrarBandaController{
-        public static void Registrar(){
+        public static void Registrar(string nomeBanda){
             Banda banda = new Banda();
-            banda.nome = "Brenno";
+            
+            banda.nome = nomeBanda;
 
-            List<Banda> t2 = new List<Banda>();
+            string json = JsonConvert.SerializeObject(banda);
+            
+            using (StreamWriter sw = new StreamWriter("bandas.json")){
 
-            t2.Add(new Banda(){nome = "brenno"}); 
-            t2.Add(new Banda(){nome = "t2"});
-
-            string tt = JsonConvert.SerializeObject(banda);
-
-            System.Console.WriteLine(tt);
-
-            t2.ForEach(x => Console.WriteLine(x));
+                sw.Write(json);
+            }
         }
 
         public static bool DoesNomeBandaExists(string nomeBanda){ // Will check if the bands name already exists; Vai verificar se a banda já está registrada
