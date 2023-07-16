@@ -22,19 +22,35 @@ namespace ScreenSound.Controller{
             t2.ForEach(x => Console.WriteLine(x));
         }
 
-        public static bool DoesNomeBandaExists(string nomeBanda){
+        public static bool DoesNomeBandaExists(string nomeBanda){ // Will check if the bands name already exists; Vai verificar se a banda já está registrada
             
-            using (StreamReader r = new StreamReader("tt.json")){
-                string jsonFile = r.ReadToEnd();
+            try{
+                // Read the bands json; Leitura do json das bandas
+                using (StreamReader r = new StreamReader("bandas.json")){
+                    string jsonFile = r.ReadToEnd();
 
-                List<Banda> bandas = JsonConvert.DeserializeObject<List<Banda>>(jsonFile);
+                    //Deserialize json; Descerialização do json
+                    List<Banda> bandas = JsonConvert.DeserializeObject<List<Banda>>(jsonFile);
 
-                if (bandas.Exists(elementos => String.Equals(elementos, nomeBanda))){
-                    return true;
+                    // Verify if the json is already populated; verifica se o json possui algum dado
+                    if (bandas != null && bandas.Count > 0){
+                        // Check the bands name already exist; verifi se o nome da banda existe
+                        if (bandas.Contains(new Banda{nome = nomeBanda})){
+                            return true;
+                        }
+                        else{
+                            return false;
+                        }
+                    }
+                    // If the jason does not have value; Se o json não possui dados
+                    else{
+                        return false;
+                    }
                 }
-                else{
-                    return false;
-                }
+            }
+            catch(Exception ex){
+                System.Console.WriteLine(ex.Message);
+                return false;
             }
             
         }

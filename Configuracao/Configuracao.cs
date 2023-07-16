@@ -4,7 +4,7 @@ namespace ScreenSound.Configuracao{
 
         
         public static bool JaFoiConfigurado(){ // Check if the application was already configured; Verifica se a aplicação já foi configurada
-            if (File.Exists("tt.json")){
+            if (File.Exists("bandas.json")){
                 return true;
             }
             else {
@@ -14,7 +14,7 @@ namespace ScreenSound.Configuracao{
 
         public static void Configurar(){ //Do the configuration of the application; Faz a configuração da aplicação
             
-            using (File.CreateText("tt.json")){};
+            using (File.CreateText("bandas.json")){};
 
         }
     }
