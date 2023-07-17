@@ -7,16 +7,53 @@ using System.Runtime.InteropServices;
 namespace ScreenSound.Controller{
     public class RegistrarBandaController{
         public static void Registrar(string nomeBanda){
-            Banda banda = new Banda();
             
-            banda.nome = nomeBanda;
+            string jsonFile = "";
 
-            string json = JsonConvert.SerializeObject(banda);
-            
-            using (StreamWriter sw = new StreamWriter("bandas.json")){
-
-                sw.Write(json);
+            using (StreamReader sr = new StreamReader("bandas.json")){
+                //Read the json file till the end; Lê o arquivo json todo
+                jsonFile = sr.ReadToEnd();
             }
+            //If the json has already more than 1 band registred; Se o json tem mais de uma banda registrada
+            if(jsonFile.StartsWith("[")){
+                
+                //Deserialize the json; Descerializa o json
+                List<Banda> bandas = JsonConvert.DeserializeObject<List<Banda>>(jsonFile);
+
+                // Add the new band to the list; Adiciona uma nova banda na lista
+                bandas.Add(new Banda(){nome = nomeBanda});
+
+                //Serialize the new json; Serializa o novo json
+                string jsonAtualizado = JsonConvert.SerializeObject(bandas);
+                
+                //Write the json
+                using (StreamWriter sw = new StreamWriter("bandas.json")){
+
+                    sw.Write(jsonAtualizado);
+                }
+            }
+            // If the json only have one band; Se o json tem apenas uma banda
+            else{
+                //Deserialize the json; Descerializa o json
+                Banda bandaJson = JsonConvert.DeserializeObject<Banda>(jsonFile);
+
+                // list of the bands; Lista das bandas 
+                List<Banda> bandas = new List<Banda>();
+
+                // Add value of the json to the list; Adiciona valor do json para a lista
+                bandas.Add(bandaJson);
+
+                // Add the new band to the list; Adiciona a nova banda para a lista
+                bandas.Add(new Banda(){nome = nomeBanda});
+
+                //Serialize the updated json; Serializa o json atualizado
+                string jsonAtualizado = JsonConvert.SerializeObject(bandas);
+
+                //Write the updated json; Escreve o novo json
+                using (StreamWriter sw = new StreamWriter("bandas.json")){
+                    sw.Write(jsonAtualizado);
+                }
+            } 
         }
 
         public static bool DoesNomeBandaExists(string nomeBanda){ // Will check if the bands name already exists; Vai verificar se a banda já está registrada
