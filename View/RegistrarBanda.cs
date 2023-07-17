@@ -36,7 +36,7 @@ namespace ScreenSound.View{
 
         public void SalvarNomeBanda(){
             
-            System.Console.WriteLine(RegistrarBandaController.DoesNomeBandaExists(this.NomeBanda));
+            RegistrarBandaController.Registrar(this.NomeBanda);
         }
 
     }
