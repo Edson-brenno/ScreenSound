@@ -3,6 +3,7 @@ using Newtonsoft;
 using Newtonsoft.Json;
 using System.Security.Cryptography.X509Certificates;
 using System.Runtime.InteropServices;
+using System.IO.Compression;
 
 namespace ScreenSound.Controller{
     public class RegistrarBandaController{
@@ -21,7 +22,7 @@ namespace ScreenSound.Controller{
                 List<Banda> bandas = JsonConvert.DeserializeObject<List<Banda>>(jsonFile);
 
                 // Add the new band to the list; Adiciona uma nova banda na lista
-                bandas.Add(new Banda(){nome = nomeBanda});
+                bandas.Add(new Banda(){nome = nomeBanda.ToUpper()});
 
                 //Serialize the new json; Serializa o novo json
                 string jsonAtualizado = JsonConvert.SerializeObject(bandas);
@@ -34,24 +35,43 @@ namespace ScreenSound.Controller{
             }
             // If the json only have one band; Se o json tem apenas uma banda
             else{
-                //Deserialize the json; Descerializa o json
-                Banda bandaJson = JsonConvert.DeserializeObject<Banda>(jsonFile);
+                
+                if(!String.IsNullOrEmpty(jsonFile)){
+                    //Deserialize the json; Descerializa o json
+                    Banda bandaJson = JsonConvert.DeserializeObject<Banda>(jsonFile);
 
-                // list of the bands; Lista das bandas 
-                List<Banda> bandas = new List<Banda>();
+                    // list of the bands; Lista das bandas 
+                    List<Banda> bandas = new List<Banda>();
 
-                // Add value of the json to the list; Adiciona valor do json para a lista
-                bandas.Add(bandaJson);
+                    // Add value of the json to the list; Adiciona valor do json para a lista
+                    bandas.Add(bandaJson);
 
-                // Add the new band to the list; Adiciona a nova banda para a lista
-                bandas.Add(new Banda(){nome = nomeBanda});
+                    // Add the new band to the list; Adiciona a nova banda para a lista
+                    bandas.Add(new Banda(){nome = nomeBanda.ToUpper()});
 
-                //Serialize the updated json; Serializa o json atualizado
-                string jsonAtualizado = JsonConvert.SerializeObject(bandas);
+                    //Serialize the updated json; Serializa o json atualizado
+                    string jsonAtualizado = JsonConvert.SerializeObject(bandas);
 
-                //Write the updated json; Escreve o novo json
-                using (StreamWriter sw = new StreamWriter("bandas.json")){
-                    sw.Write(jsonAtualizado);
+                    //Write the updated json; Escreve o novo json
+                    using (StreamWriter sw = new StreamWriter("bandas.json")){
+                        sw.Write(jsonAtualizado);
+                    }
+                }
+                else{
+                    
+                    // list of the bands; Lista das bandas 
+                    List<Banda> bandas = new List<Banda>();
+
+                    // Add the new band to the list; Adiciona a nova banda para a lista
+                    bandas.Add(new Banda(){nome = nomeBanda.ToUpper()});
+
+                    //Serialize the updated json; Serializa o json atualizado
+                    string jsonAtualizado = JsonConvert.SerializeObject(bandas);
+
+                    //Write the updated json; Escreve o novo json
+                    using (StreamWriter sw = new StreamWriter("bandas.json")){
+                        sw.Write(jsonAtualizado);
+                    }
                 }
             } 
         }
@@ -65,15 +85,15 @@ namespace ScreenSound.Controller{
                     string jsonFile = r.ReadToEnd();
 
                     //If the json has already more than 1 band registred; Se o json tem mais de uma banda registrada
-                    if (jsonFile.StartsWith("[")){
-
+                    if (jsonFile.StartsWith("[") == true){
+                        System.Console.WriteLine("Chegou errado");
                         //Deserialize json; Descerialização do json
                         List<Banda> bandas = JsonConvert.DeserializeObject<List<Banda>>(jsonFile);
 
                         // Verify if the json is already populated; verifica se o json possui algum dado
                         if (bandas != null && bandas.Count > 0){
                             // Check the bands name already exist; verifi se o nome da banda existe
-                            if (bandas.Contains(new Banda{nome = nomeBanda})){
+                            if (bandas.Where(x => x.nome.ToUpper() == nomeBanda.ToUpper()).Count() > 0){
                                 return true;
                             }
                             else{
@@ -87,10 +107,13 @@ namespace ScreenSound.Controller{
                     }
                     // If the json only have one band; Se o json tem apenas uma banda
                     else{
-                        Banda banda = JsonConvert.DeserializeObject<Banda>(jsonFile);
+                        
+                        //Check if the jsonFile is empty
+                        if (!String.IsNullOrEmpty(jsonFile)){
+                            
+                            Banda banda = JsonConvert.DeserializeObject<Banda>(jsonFile);
 
-                        if (banda.nome != null){
-                            if (banda.nome.Contains(nomeBanda[0])){
+                            if (banda.nome.ToUpper() == nomeBanda.ToUpper()){
                                 return true;
                             }
                             else{
