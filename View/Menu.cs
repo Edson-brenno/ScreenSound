@@ -59,20 +59,25 @@ namespace ScreenSound.View.Menu{
 
             switch(int.Parse(opcao)){
                 case 1:
-                    RegistrarBandaView registroBanda = new RegistrarBandaView();
-                    bool continua = true;
+                    try{
+                        RegistrarBandaView registroBanda = new RegistrarBandaView();
+                        bool continua = true;
 
-                    while(continua == true){
+                        while(continua == true){
 
-                        registroBanda.PerguntaNomeBanda();
+                            registroBanda.PerguntaNomeBanda();
 
-                        if (!RegistrarBandaController.DoesNomeBandaExists(registroBanda.NomeBanda)){
-                            continua = false;
-                            registroBanda.SalvarNomeBanda();
+                            if (!RegistrarBandaController.DoesNomeBandaExists(registroBanda.NomeBanda)){
+                                continua = false;
+                                registroBanda.SalvarNomeBanda();
+                            }
+                            else{
+                                throw new BandaAlreadyExistException();
+                            }                       
                         }
-                        else{
-                            throw new BandaAlreadyExistException();
-                        }                       
+                    }
+                    catch(Exception ex){
+                        System.Console.WriteLine(ex.Message);
                     }
                     break;
                 case 2:
