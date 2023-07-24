@@ -86,7 +86,6 @@ namespace ScreenSound.Controller{
 
                     //If the json has already more than 1 band registred; Se o json tem mais de uma banda registrada
                     if (jsonFile.StartsWith("[") == true){
-                        System.Console.WriteLine("Chegou errado");
                         //Deserialize json; Descerialização do json
                         List<Banda> bandas = JsonConvert.DeserializeObject<List<Banda>>(jsonFile);
 

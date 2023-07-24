@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\brenn\\Documents\\alura\\ScreenSound\\ScreenSound.csproj": {}
+    "C:\\Users\\brenn\\Documents\\ScreenSound\\ScreenSound.csproj": {}
   },
   "projects": {
-    "C:\\Users\\brenn\\Documents\\alura\\ScreenSound\\ScreenSound.csproj": {
+    "C:\\Users\\brenn\\Documents\\ScreenSound\\ScreenSound.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\brenn\\Documents\\alura\\ScreenSound\\ScreenSound.csproj",
+        "projectUniqueName": "C:\\Users\\brenn\\Documents\\ScreenSound\\ScreenSound.csproj",
         "projectName": "ScreenSound",
-        "projectPath": "C:\\Users\\brenn\\Documents\\alura\\ScreenSound\\ScreenSound.csproj",
+        "projectPath": "C:\\Users\\brenn\\Documents\\ScreenSound\\ScreenSound.csproj",
         "packagesPath": "C:\\Users\\brenn\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\brenn\\Documents\\alura\\ScreenSound\\obj\\",
+        "outputPath": "C:\\Users\\brenn\\Documents\\ScreenSound\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\brenn\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -59,7 +59,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.305\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.306\\RuntimeIdentifierGraph.json"
         }
       }
     }
