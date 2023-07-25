@@ -5,7 +5,12 @@ namespace ScreenSound.View{
         public static void MostrarBandas(){
             MostrarBandaController mostrarBandas = new MostrarBandaController();
 
-            mostrarBandas.Mostrar();
+            if (mostrarBandas.TotalRegistros() == 0){
+                System.Console.WriteLine("Não Possui Bandas Cadastradas");
+            }
+            else {
+                mostrarBandas.Mostrar();
+            }
         }
     }
 }
