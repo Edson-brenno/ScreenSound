@@ -12,6 +12,20 @@ namespace ScreenSound.Controller{
 
             this.jsonFile = File.ReadAllText("bandas.json");
         }
+
+        public int TotalRegistros(){
+            if (this.jsonFile.Length == 0){
+                return 0;
+            }
+            else if (!this.jsonFile.StartsWith('[')){
+                return 1;
+            }
+            else {
+                List<Banda> bandas = JsonConvert.DeserializeObject<List<Banda>>(this.jsonFile);
+
+                return bandas.Count;
+            }
+        }
         public void Mostrar(){
             
             if (this.jsonFile.Length == 0){
