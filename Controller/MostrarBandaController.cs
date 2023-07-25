@@ -2,28 +2,37 @@ using System;
 using System.IO;
 using System.Linq;
 using ScreenSound.Model;
-using Newtonsoft;
 using Newtonsoft.Json;
-using System.Security.Cryptography.X509Certificates;
 
 namespace ScreenSound.Controller{
     public class MostrarBandaController{
         
-        private List<Banda> bandas;
+        private string jsonFile = ""; 
         public MostrarBandaController(){
 
-            string jsonFile = File.ReadAllText("bandas.json");
-
-            this.bandas = JsonConvert.DeserializeObject<List<Banda>>(jsonFile);
+            this.jsonFile = File.ReadAllText("bandas.json");
         }
         public void Mostrar(){
+            
+            if (this.jsonFile.Length == 0){
+                System.Console.WriteLine("Sem bandas Cadastradas");
+            }
+            else if (!this.jsonFile.StartsWith('[')){
+                Banda banda = JsonConvert.DeserializeObject<Banda>(this.jsonFile);
 
-            int numero = 1;
-            this.bandas.ForEach(banda => {
-                System.Console.WriteLine($"{numero} ---- {banda.nome}"); 
-                numero++;
-                    
-            });
+                System.Console.WriteLine($"1 --------------- {banda.nome}");
+            }
+            else {
+                List<Banda> bandas = JsonConvert.DeserializeObject<List<Banda>>(this.jsonFile);
+
+                int indice = 1;
+
+                bandas.ForEach(banda => {
+                    System.Console.WriteLine($"{indice} --------------- {banda.nome}");
+                    indice++;
+                });
+            
+            }
             
         } 
     }
