@@ -8,11 +8,20 @@ namespace ScreenSound.View{
             if (mostrarBandas.TotalRegistros() == 0){
                 System.Console.WriteLine("Não Possui Bandas Cadastradas");
             }
-            else if (mostrarBandas.TotalRegistros() == 1){
-                mostrarBandas.Mostrar();
+            else if (mostrarBandas.TotalRegistros() <= 3){
+                mostrarBandas.Mostrar(1);
             }
             else {
-                mostrarBandas.Mostrar();
+                int pagina = 4;
+                if (mostrarBandas.TotalRegistros() > 3 * pagina){
+                    mostrarBandas.Mostrar(pagina);
+                    System.Console.WriteLine("Proxima página");    
+                }
+                else{
+                    mostrarBandas.Mostrar(pagina);
+                    System.Console.WriteLine("Pagina Anterior");
+                }
+                
             }
             
         }
