@@ -1,3 +1,5 @@
+using System.Collections;
+using System.Diagnostics;
 using ScreenSound.Controller;
 namespace ScreenSound.View{
 
@@ -35,7 +37,7 @@ namespace ScreenSound.View{
                         
             }
             else {
-                int pagina = 4;
+                int pagina = 1;
                 bool continua = true;
 
                 while(continua == true){
@@ -52,8 +54,38 @@ namespace ScreenSound.View{
                         System.Console.WriteLine("================================================");
                         System.Console.WriteLine("         1 - Voltar Menu     2 - Página Anterior" + 
                         "\n         3 - Próxima Página  4 - Sair");
-                        System.Console.WriteLine("================================================");  
-                        continua = false;
+                        System.Console.WriteLine("================================================");
+                        System.Console.Write("Digite a opção escolhida: ");
+                        string op = System.Console.ReadLine(); 
+
+                        switch(int.Parse(op)){
+                            case 1:
+                                continua = false;
+                                
+                                Menu menu = new Menu();
+
+                                System.Console.Clear();
+
+                                menu.Main();
+
+                            break;
+                            case 2:
+                                pagina -= 1;
+
+                                System.Console.Clear();
+                            break;
+                            case 3:
+                                pagina += 1;
+
+                                System.Console.Clear();
+                            break;
+                            case 4:
+                                continua = false;
+                            break;
+                            default:
+                                continua = false;
+                            break;
+                        }
                     }
                     else{
                         mostrarBandas.Mostrar(pagina);
@@ -67,8 +99,31 @@ namespace ScreenSound.View{
 
                         System.Console.WriteLine("================================================");
                         System.Console.WriteLine(" 1 - Voltar Menu    2 - Página Anterior  3 - Sair");
-                        System.Console.WriteLine("================================================");  
-                        continua = false;
+                        System.Console.WriteLine("================================================");
+                        System.Console.Write("Digite a opção escolhida: ");
+                        string op = System.Console.ReadLine(); 
+
+                        switch(int.Parse(op)){
+                            case 1:
+                                Menu menu = new Menu();
+
+                                System.Console.Clear();
+
+                                menu.Main();
+
+                            break;
+                            case 2:
+                                pagina -= 1;
+
+                                System.Console.Clear();
+                            break;
+                            case 3:
+                                continua = false;
+                            break;
+                            default:
+                                continua = false;
+                            break;
+                        }
                     }
                 
                 }

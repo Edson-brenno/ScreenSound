@@ -1,7 +1,6 @@
 ﻿using System;
 using ScreenSound.Configuracao;
 using ScreenSound.View;
-using ScreenSound.View.Menu;
 
 namespace ScreenSound{
     public class ScreenSound{

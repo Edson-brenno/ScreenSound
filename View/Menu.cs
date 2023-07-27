@@ -4,7 +4,7 @@
 using ScreenSound.Controller;
 using ScreenSound.View.MenuException;
 
-namespace ScreenSound.View.Menu{
+namespace ScreenSound.View{
 
     public class Menu{
 
