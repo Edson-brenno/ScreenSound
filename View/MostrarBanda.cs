@@ -31,9 +31,29 @@ namespace ScreenSound.View{
                             "\n" 
                             );  
 
-                        System.Console.WriteLine("================================================");
-                        System.Console.WriteLine(" 1 - Voltar Menu  3 - Sair");
-                        System.Console.WriteLine("================================================");  
+                System.Console.WriteLine("================================================");
+                System.Console.WriteLine(" 1 - Voltar Menu  3 - Sair");
+                System.Console.WriteLine("================================================");
+
+                System.Console.Write("Digite a opção escolhida: ");
+                string op = System.Console.ReadLine(); 
+
+                switch(int.Parse(op)){
+                            case 1:
+                                Menu menu = new Menu();
+
+                                System.Console.Clear();
+
+                                menu.Main();
+
+                            break;
+                            case 2:
+                                System.Environment.Exit(0);
+                            break;
+                            default:
+                                System.Environment.Exit(0);
+                            break;
+                        } 
                         
             }
             else {
@@ -61,7 +81,7 @@ namespace ScreenSound.View{
                         switch(int.Parse(op)){
                             case 1:
                                 continua = false;
-                                
+
                                 Menu menu = new Menu();
 
                                 System.Console.Clear();
