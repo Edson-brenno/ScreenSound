@@ -2,6 +2,16 @@ using ScreenSound.Controller;
 namespace ScreenSound.View{
 
     public class MostrarBandaView{
+
+        public static void ApresentaMenuBandas(){
+            System.Console.Clear();
+            
+            System.Console.WriteLine(@"
+                ███████████████████████████████████████████████████████████████████████████████████████████████████████
+                █─▄▄▄▄█─▄▄▄─█▄─▄▄▀█▄─▄▄─█▄─▄▄─█─▄▄▄▄█─▄▄─█▄─██─▄█▄─▀█▄─▄█▄─▄▄▀███▄─▄─▀██▀▄─██▄─▀█▄─▄█▄─▄▄▀██▀▄─██─▄▄▄▄█
+                █▄▄▄▄─█─███▀██─▄─▄██─▄█▀██─▄█▀█▄▄▄▄─█─██─██─██─███─█▄▀─███─██─████─▄─▀██─▀─███─█▄▀─███─██─██─▀─██▄▄▄▄─█
+                ▀▄▄▄▄▄▀▄▄▄▄▄▀▄▄▀▄▄▀▄▄▄▄▄▀▄▄▄▄▄▀▄▄▄▄▄▀▄▄▄▄▀▀▄▄▄▄▀▀▄▄▄▀▀▄▄▀▄▄▄▄▀▀▀▀▄▄▄▄▀▀▄▄▀▄▄▀▄▄▄▀▀▄▄▀▄▄▄▄▀▀▄▄▀▄▄▀▄▄▄▄▄▀");
+        }
         public static void MostrarBandas(){
             MostrarBandaController mostrarBandas = new MostrarBandaController();
 
@@ -12,14 +22,20 @@ namespace ScreenSound.View{
                 mostrarBandas.Mostrar(1);
             }
             else {
-                int pagina = 4;
-                if (mostrarBandas.TotalRegistros() > 3 * pagina){
-                    mostrarBandas.Mostrar(pagina);
-                    System.Console.WriteLine("Proxima página");    
-                }
-                else{
-                    mostrarBandas.Mostrar(pagina);
-                    System.Console.WriteLine("Pagina Anterior");
+                int pagina = 2;
+                bool continua = true;
+
+                while(continua == true){
+                    if (mostrarBandas.TotalRegistros() > 3 * pagina){
+                        mostrarBandas.Mostrar(pagina);
+                        System.Console.WriteLine($"Pág {pagina - 1} | {pagina} | {pagina + 1}      {pagina * 3} registros de {mostrarBandas.TotalRegistros()}...");    
+                        continua = false;
+                    }
+                    else{
+                        mostrarBandas.Mostrar(pagina);
+                        System.Console.WriteLine("Pagina Anterior");
+                    }
+                
                 }
                 
             }
