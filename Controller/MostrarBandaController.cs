@@ -41,29 +41,29 @@ namespace ScreenSound.Controller{
                 List<Banda> bandas = JsonConvert.DeserializeObject<List<Banda>>(this.jsonFile); //Deserialize the jsonFile; Descerializa o arquivo json
                 Banda[] bandasArray  = bandas.ToArray(); // Transform the list into an array; transforma a lista de bandas em array
 
-                int indice = 1;
+                int indice = (pagina * 3) - 2;
 
                 if (pagina == 1 && bandas.Count <= 3){
                     for(int i = 0; i < bandas.Count; i++){
-                        System.Console.WriteLine($"{indice} ----------------- {bandasArray[i]}");
+                        System.Console.WriteLine($"             {indice} ----------------- {bandasArray[i]}");
                         indice++;
                     }
                 }
                 else if (pagina == 1 && bandas.Count > 3){
                     for(int i = 0; i < pagina + 2; i++){
-                        System.Console.WriteLine($"{indice} ----------------- {bandasArray[i]}");
+                        System.Console.WriteLine($"             {indice} ----------------- {bandasArray[i]}");
                         indice++;
                     }
                 }
                 else if (pagina > 1 && bandas.Count < 3 * pagina){
                     for(int i = (3 *pagina) - 3; i < bandas.Count; i++){
-                        System.Console.WriteLine($"{indice} ----------------- {bandasArray[i]}");
+                        System.Console.WriteLine($"             {indice} ----------------- {bandasArray[i]}");
                         indice++;
                     }
                 }
                 else{
                     for(int i = (3 *pagina) - 3; i <= (3 * pagina) - 1; i++){
-                        System.Console.WriteLine($"{indice} ----------------- {bandasArray[i]}");
+                        System.Console.WriteLine($"             {indice} ----------------- {bandasArray[i]}");
                         indice++;
                     }
                 }
