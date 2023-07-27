@@ -81,7 +81,8 @@ namespace ScreenSound.View.Menu{
                     }
                     break;
                 case 2:
-                    System.Console.WriteLine("Mostrando bandas registradas");
+
+                    MostrarBandaView.ApresentaMenuBandas();
 
                     MostrarBandaView.MostrarBandas();
                     break;

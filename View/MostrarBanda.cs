@@ -5,12 +5,13 @@ namespace ScreenSound.View{
 
         public static void ApresentaMenuBandas(){
             System.Console.Clear();
-            
+
             System.Console.WriteLine(@"
-                ███████████████████████████████████████████████████████████████████████████████████████████████████████
-                █─▄▄▄▄█─▄▄▄─█▄─▄▄▀█▄─▄▄─█▄─▄▄─█─▄▄▄▄█─▄▄─█▄─██─▄█▄─▀█▄─▄█▄─▄▄▀███▄─▄─▀██▀▄─██▄─▀█▄─▄█▄─▄▄▀██▀▄─██─▄▄▄▄█
-                █▄▄▄▄─█─███▀██─▄─▄██─▄█▀██─▄█▀█▄▄▄▄─█─██─██─██─███─█▄▀─███─██─████─▄─▀██─▀─███─█▄▀─███─██─██─▀─██▄▄▄▄─█
-                ▀▄▄▄▄▄▀▄▄▄▄▄▀▄▄▀▄▄▀▄▄▄▄▄▀▄▄▄▄▄▀▄▄▄▄▄▀▄▄▄▄▀▀▄▄▄▄▀▀▄▄▄▀▀▄▄▀▄▄▄▄▀▀▀▀▄▄▄▄▀▀▄▄▀▄▄▀▄▄▄▀▀▄▄▀▄▄▄▄▀▀▄▄▀▄▄▀▄▄▄▄▄▀");
+                
+███████████████████████████████████████
+█▄─▄─▀██▀▄─██▄─▀█▄─▄█▄─▄▄▀██▀▄─██─▄▄▄▄█
+██─▄─▀██─▀─███─█▄▀─███─██─██─▀─██▄▄▄▄─█
+▀▄▄▄▄▀▀▄▄▀▄▄▀▄▄▄▀▀▄▄▀▄▄▄▄▀▀▄▄▀▄▄▀▄▄▄▄▄▀ " + "\n\n");
         }
         public static void MostrarBandas(){
             MostrarBandaController mostrarBandas = new MostrarBandaController();
@@ -28,7 +29,11 @@ namespace ScreenSound.View{
                 while(continua == true){
                     if (mostrarBandas.TotalRegistros() > 3 * pagina){
                         mostrarBandas.Mostrar(pagina);
-                        System.Console.WriteLine($"Pág {pagina - 1} | {pagina} | {pagina + 1}      {pagina * 3} registros de {mostrarBandas.TotalRegistros()}...");    
+                        System.Console.WriteLine(
+                            "\n" +
+                            $"       Página {pagina}  \nMostrando {pagina * 3} de {mostrarBandas.TotalRegistros()} registros..." +
+                            "\n" 
+                            );    
                         continua = false;
                     }
                     else{
