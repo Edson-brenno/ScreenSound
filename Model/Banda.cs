@@ -1,5 +1,5 @@
 namespace ScreenSound.Model{
-    class Banda {
+    public class Banda {
         //Nome banda
         public string nome = "";
 
