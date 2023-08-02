@@ -83,6 +83,8 @@ namespace ScreenSound.View{
                             break;
                             case 2:
                                 EscolhaBanda.PerguntaBandaEscolhida(mostrarBandas.TotalRegistros());
+
+                                AvaliarBandaController.AvaliarBanda(EscolhaBanda.bandaIndice);
                             break;
                             case 3:
                                 System.Environment.Exit(0);
