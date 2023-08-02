@@ -1,4 +1,5 @@
 using ScreenSound.Controller;
+using ScreenSound.View.MenuException;
 
 namespace ScreenSound.View{
 
@@ -6,8 +7,31 @@ namespace ScreenSound.View{
         
         public static int bandaIndice;
 
-        public static void PerguntaBandaEscolhida(){
-            
+        public static void PerguntaBandaEscolhida(int totalRegistros){
+            try{
+                System.Console.WriteLine("================================================");
+                System.Console.Write("Digite o indice da banda escolhida: ");
+                string bandaEscolhida = System.Console.ReadLine();
+                
+                // Validation of the chosen band; Validação da banda escolhida
+                if(string.IsNullOrEmpty(bandaEscolhida)){
+                    throw new IsNotValidOptionException("Error! Digite o indice da banda");
+                }
+                else if (!Char.IsDigit(bandaEscolhida[0])){
+                    throw new IsNotValidOptionException("Error! O indice da banda não pode ser letra");
+                }
+                else if (Char.IsDigit(bandaEscolhida[0]) && Convert.ToInt32(bandaEscolhida) > totalRegistros){
+                    throw new IsNotValidOptionException("Error! Indice inválido");
+                }
+                else if (Char.IsDigit(bandaEscolhida[0]) && Convert.ToInt32(bandaEscolhida) <= 0){
+                    throw new IsNotValidOptionException("Error! Indice inválido");
+                }
+                else{
+                    bandaIndice = Convert.ToInt32(bandaEscolhida);
+                }
+            }catch(Exception ex){
+                System.Console.WriteLine(ex.Message);
+            }
         }
     }
     public class AvaliarBandaView{
