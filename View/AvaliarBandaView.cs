@@ -31,6 +31,7 @@ namespace ScreenSound.View{
                 }
             }catch(Exception ex){
                 System.Console.WriteLine(ex.Message);
+                System.Environment.Exit(0);
             }
         }
     }
@@ -81,7 +82,7 @@ namespace ScreenSound.View{
 
                             break;
                             case 2:
-                            
+                                EscolhaBanda.PerguntaBandaEscolhida(mostrarBandas.TotalRegistros());
                             break;
                             case 3:
                                 System.Environment.Exit(0);
