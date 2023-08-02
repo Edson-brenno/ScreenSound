@@ -1,6 +1,15 @@
 using ScreenSound.Controller;
 
 namespace ScreenSound.View{
+
+    public class EscolhaBanda{
+        
+        public static int bandaIndice;
+
+        public static void PerguntaBandaEscolhida(){
+            
+        }
+    }
     public class AvaliarBandaView{
         public static void ApresentaMenuAvaliacaoBanda(){
             System.Console.Clear();
@@ -48,6 +57,9 @@ namespace ScreenSound.View{
 
                             break;
                             case 2:
+                            
+                            break;
+                            case 3:
                                 System.Environment.Exit(0);
                             break;
                             default:
