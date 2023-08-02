@@ -87,7 +87,9 @@ namespace ScreenSound.View{
                     MostrarBandaView.MostrarBandas();
                     break;
                 case 3:
-                    System.Console.WriteLine("Avaliando bandas");
+                    AvaliarBandaView.ApresentaMenuAvaliacaoBanda();
+
+                    AvaliarBandaView.MostrarOpcoesBandas();
                     break;
                 case 4:
                     System.Console.WriteLine("Media da banda");
