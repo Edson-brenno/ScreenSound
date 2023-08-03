@@ -5,10 +5,10 @@ using ScreenSound.View.Exceptions;
 
 namespace ScreenSound.View{
 
-    public class Nota{
+    public class Nota{ // Grade class; Classe das notas
 
-        public static double nota;
-        public static void PerguntaNotaBanda(){
+        public static double nota; // The grade of the band; Nota da banda
+        public static void PerguntaNotaBanda(){ // Ask to the user the bands grade; Pergunta para o usuário a nota da banda;
             
             bool continua = true;
 
@@ -17,6 +17,7 @@ namespace ScreenSound.View{
                     System.Console.Write("Digite a nota da banda (0,10): ");
                     string notaDigitada = System.Console.ReadLine();
 
+                    // Validation of the bands grade; Validação da nota da banda;
                     if(string.IsNullOrEmpty(notaDigitada)){
                         throw new IsNUllException();
                     }
@@ -44,11 +45,11 @@ namespace ScreenSound.View{
         }
     }
 
-    public class EscolhaBanda{
+    public class EscolhaBanda{ // Class to choose the band; Class para escolha da banda;
         
-        public static int bandaIndice;
+        public static int bandaIndice; // Id of the choosed band; Id da banda escolhida
 
-        public static void PerguntaBandaEscolhida(int totalRegistros){
+        public static void PerguntaBandaEscolhida(int totalRegistros){ // Ask the band Id; Pergunta o id da banda
             try{
                 System.Console.WriteLine("================================================");
                 System.Console.Write("Digite o indice da banda escolhida: ");
@@ -76,8 +77,8 @@ namespace ScreenSound.View{
             }
         }
     }
-    public class AvaliarBandaView{
-        public static void ApresentaMenuAvaliacaoBanda(){
+    public class AvaliarBandaView{ 
+        public static void ApresentaMenuAvaliacaoBanda(){ // Print the grades band menu; Printa o menu das notas das bandas
             System.Console.Clear();
 
             System.Console.WriteLine(@"
@@ -89,7 +90,7 @@ namespace ScreenSound.View{
 ▀▄▄▀▄▄▀▀▀▄▀▀▀▄▄▀▄▄▀▄▄▄▄▄▀▄▄▄▀▄▄▀▄▄▀▄▄▄▄▄▀▄▄▀▄▄▀▄▄▄▄▀▀▀▄▄▄▄▀▀▄▄▀▄▄▀▄▄▄▀▀▄▄▀▄▄▄▄▀▀▄▄▀▄▄▀ " + "\n\n");
         }
 
-        public static void MostrarOpcoesBandas(){
+        public static void MostrarOpcoesBandas(){ // Show the registred bands; mostra as bandas registradas
 
             MostrarBandaController mostrarBandas = new MostrarBandaController();
 

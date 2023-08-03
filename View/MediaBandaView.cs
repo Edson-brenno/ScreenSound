@@ -5,7 +5,7 @@ using ScreenSound.View.Exceptions;
 
 namespace ScreenSound.View{
     public class MediaBandaView{
-        public static void ApresentaMenuMediaBanda(){
+        public static void ApresentaMenuMediaBanda(){ // Print the grades band menu; Printa o menu das notas das bandas
             System.Console.Clear();
 
             System.Console.WriteLine(@"
@@ -16,7 +16,7 @@ namespace ScreenSound.View{
 ▀▄▄▄▀▄▄▄▀▄▄▄▄▄▀▄▄▄▄▀▀▄▄▄▀▄▄▀▄▄▀▀▀▄▄▄▄▀▀▄▄▀▄▄▀▄▄▄▀▀▄▄▀▄▄▄▄▀▀▄▄▀▄▄▀▄▄▄▄▄▀" + "\n\n");
         }
 
-        public static void MostrarOpcoesBandas(){
+        public static void MostrarOpcoesBandas(){ // Show the registred bands; mostra as bandas registradas
 
             MostrarBandaController mostrarBandas = new MostrarBandaController();
 
