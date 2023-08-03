@@ -4,7 +4,7 @@ using ScreenSound.Model;
 namespace ScreenSound.Controller{
     public class AvaliarBandaController{
 
-        public static void AvaliarBanda(int indiceBanda){
+        public static void AvaliarBanda(int indiceBanda, double nota){
 
             string jsonFile = "";
 
@@ -17,7 +17,7 @@ namespace ScreenSound.Controller{
 
             // Adicione a nova nota ao array de notas da banda selecionada
             List<double> notasList = bandasArray[indiceBanda - 1].notas.ToList();
-            notasList.Add(1.1);
+            notasList.Add(nota);
             bandasArray[indiceBanda - 1].notas = notasList.ToArray();
 
             List<Banda> bandasAtualizada = bandasArray.ToList();
