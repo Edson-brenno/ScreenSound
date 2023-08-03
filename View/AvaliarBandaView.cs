@@ -128,6 +128,16 @@ namespace ScreenSound.View{
                                 Nota.PerguntaNotaBanda();
 
                                 AvaliarBandaController.AvaliarBanda(EscolhaBanda.bandaIndice, Nota.nota);
+
+                                System.Console.WriteLine("Nota Registrada com Sucesso! :)");
+
+                                
+                                Menu menuPrincipal = new Menu();
+
+                                System.Console.Clear();
+
+                                menuPrincipal.Main();
+                                
                             break;
                             case 3:
                                 System.Environment.Exit(0);
@@ -182,6 +192,23 @@ namespace ScreenSound.View{
                                 System.Console.Clear();
                             break;
                             case 4:
+                                EscolhaBanda.PerguntaBandaEscolhida(mostrarBandas.TotalRegistros());
+
+                                Nota.PerguntaNotaBanda();
+
+                                AvaliarBandaController.AvaliarBanda(EscolhaBanda.bandaIndice, Nota.nota);
+
+                                System.Console.WriteLine("Nota Registrada com Sucesso! :)");
+
+                                continua = false;
+
+                                Menu menuPrincipal = new Menu();
+
+                                System.Console.Clear();
+
+                                menuPrincipal.Main();
+                            break;
+                            case 5:
                                 continua = false;
                             break;
                             default:
@@ -210,6 +237,8 @@ namespace ScreenSound.View{
                             case 1:
                                 Menu menu = new Menu();
 
+                                continua = false;
+
                                 System.Console.Clear();
 
                                 menu.Main();
@@ -221,6 +250,23 @@ namespace ScreenSound.View{
                                 System.Console.Clear();
                             break;
                             case 3:
+                                EscolhaBanda.PerguntaBandaEscolhida(mostrarBandas.TotalRegistros());
+
+                                Nota.PerguntaNotaBanda();
+
+                                AvaliarBandaController.AvaliarBanda(EscolhaBanda.bandaIndice, Nota.nota);
+
+                                System.Console.WriteLine("Nota Registrada com Sucesso! :)");
+
+                                continua = false;
+
+                                Menu menuPrincipal = new Menu();
+
+                                System.Console.Clear();
+
+                                menuPrincipal.Main();
+                            break;
+                            case 4:
                                 continua = false;
                             break;
                             default:
