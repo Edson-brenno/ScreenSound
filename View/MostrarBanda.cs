@@ -5,7 +5,7 @@ namespace ScreenSound.View{
 
     public class MostrarBandaView{
 
-        public static void ApresentaMenuBandas(){ // Print Logo; Printa bandas logo
+        public static void ApresentaMenuBandas(){
             System.Console.Clear();
 
             System.Console.WriteLine(@"
@@ -15,7 +15,7 @@ namespace ScreenSound.View{
     ██─▄─▀██─▀─███─█▄▀─███─██─██─▀─██▄▄▄▄─█
     ▀▄▄▄▄▀▀▄▄▀▄▄▀▄▄▄▀▀▄▄▀▄▄▄▄▀▀▄▄▀▄▄▀▄▄▄▄▄▀ " + "\n\n");
         }
-        public static void MostrarBandas(){ // Show the bands; Mostra as bandas
+        public static void MostrarBandas(){
             MostrarBandaController mostrarBandas = new MostrarBandaController();
 
             if (mostrarBandas.TotalRegistros() == 0){

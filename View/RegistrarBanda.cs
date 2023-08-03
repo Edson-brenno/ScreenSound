@@ -5,8 +5,8 @@ using ScreenSound.View.Exceptions;
 namespace ScreenSound.View{
     public class RegistrarBandaView{
 
-        public string NomeBanda {get;set;} // Band names; Nome da banda
-        public void PerguntaNomeBanda(){ // Ask the bands name; Pergunta o nome da banda
+        public string NomeBanda {get;set;}
+        public void PerguntaNomeBanda(){
             
             bool continuaPergunta = true;
 
@@ -34,7 +34,7 @@ namespace ScreenSound.View{
         }
 
 
-        public void SalvarNomeBanda(){ //Save the bands name; Salva o nome da banda
+        public void SalvarNomeBanda(){
             
             RegistrarBandaController.Registrar(this.NomeBanda);
         }

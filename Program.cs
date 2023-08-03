@@ -7,17 +7,13 @@ namespace ScreenSound{
         public static void Main(){
             
             try{
-                
-                // Check if the necessaries archives already exists; Verifica se os arquivos necessarios existem;
+
                 if (!ConfiguracaoScreenSound.JaFoiConfigurado()){
-                    // Confegure the system; Configura o sistema para rodar
                     ConfiguracaoScreenSound.Configurar();
                 }
 
-                //Screen Sound Apresentation; Screen Sound Apresentação
                 ApresentacaoScreenSound.EscreveScreenSound();
 
-                //Menu Screen Sound; Menu screen sound
                 Menu menu = new Menu();
 
                 menu.Main();

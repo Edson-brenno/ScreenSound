@@ -15,7 +15,7 @@ namespace ScreenSound.Controller{
             List<Banda> bandas = JsonConvert.DeserializeObject<List<Banda>>(jsonFile); //Deserialize the jsonFile; Descerializa o arquivo json
             Banda[] bandasArray  = bandas.ToArray(); // Transform the list into an array; transforma a lista de bandas em array
 
-            //Get the select band to do the avarege; Obtem a banda selecionada para obter a média
+            // Adicione a nova nota ao array de notas da banda selecionada
             List<double> notasList = bandasArray[indiceBanda - 1].notas.ToList();
 
             double media = notasList.Count() > 0 ? notasList.Average() : 0;
