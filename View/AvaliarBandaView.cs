@@ -1,7 +1,47 @@
 using ScreenSound.Controller;
 using ScreenSound.View.MenuException;
+using ScreenSound.ExceptionAvaliarBanda;
+using ScreenSound.View.Exceptions;
 
 namespace ScreenSound.View{
+
+    public class Nota{
+
+        public static double nota;
+        public static void PerguntaNotaBanda(){
+            
+            bool continua = true;
+
+            try{
+                while(continua == true){
+                    System.Console.Write("Digite a nota da banda (0,10): ");
+                    string notaDigitada = System.Console.ReadLine();
+
+                    if(string.IsNullOrEmpty(notaDigitada)){
+                        throw new IsNUllException();
+                    }
+                    else if (!char.IsDigit(notaDigitada[0])){
+                        throw new IsStringException();
+                    }
+                    else if (char.IsDigit(notaDigitada[0]) && Convert.ToDouble(notaDigitada) > 10){
+                        throw new GradeIsHigherOrLessException();
+                    }
+                    else if (char.IsDigit(notaDigitada[0]) && Convert.ToDouble(notaDigitada) < 0){
+                        throw new GradeIsHigherOrLessException();
+                    }
+                    else{
+                        nota = Convert.ToDouble(notaDigitada);
+                        continua = false;
+                    }
+                }
+            }catch(Exception ex){
+                System.Console.WriteLine(ex.Message);
+            }
+            
+            
+            
+        }
+    }
 
     public class EscolhaBanda{
         
