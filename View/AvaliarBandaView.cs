@@ -12,8 +12,8 @@ namespace ScreenSound.View{
             
             bool continua = true;
 
-            try{
-                while(continua == true){
+            while(continua == true){
+                    try{
                     System.Console.Write("Digite a nota da banda (0,10): ");
                     string notaDigitada = System.Console.ReadLine();
 
@@ -23,20 +23,21 @@ namespace ScreenSound.View{
                     else if (!char.IsDigit(notaDigitada[0])){
                         throw new IsStringException();
                     }
-                    else if (char.IsDigit(notaDigitada[0]) && Convert.ToDouble(notaDigitada) > 10){
+                    else if (char.IsDigit(notaDigitada[0]) && Convert.ToDouble(notaDigitada.Replace('.',',')) > 10){
                         throw new GradeIsHigherOrLessException();
                     }
-                    else if (char.IsDigit(notaDigitada[0]) && Convert.ToDouble(notaDigitada) < 0){
+                    else if (char.IsDigit(notaDigitada[0]) && Convert.ToDouble(notaDigitada.Replace('.',',')) < 0){
                         throw new GradeIsHigherOrLessException();
                     }
                     else{
-                        nota = Convert.ToDouble(notaDigitada);
+                        nota = Convert.ToDouble(notaDigitada.Replace('.',','));
                         continua = false;
                     }
+                }catch(Exception ex){
+                    System.Console.WriteLine(ex.Message);
                 }
-            }catch(Exception ex){
-                System.Console.WriteLine(ex.Message);
             }
+            
             
             
             
@@ -124,7 +125,9 @@ namespace ScreenSound.View{
                             case 2:
                                 EscolhaBanda.PerguntaBandaEscolhida(mostrarBandas.TotalRegistros());
 
-                                AvaliarBandaController.AvaliarBanda(EscolhaBanda.bandaIndice);
+                                Nota.PerguntaNotaBanda();
+
+                                AvaliarBandaController.AvaliarBanda(EscolhaBanda.bandaIndice, Nota.nota);
                             break;
                             case 3:
                                 System.Environment.Exit(0);
