@@ -20,7 +20,8 @@ namespace ScreenSound.Controller{
 
             double media = notasList.Count() > 0 ? notasList.Average() : 0;
             
-            return $"A media da banda {bandasArray[indiceBanda - 1].ToString()} é {media}";
+            return "================================================" + 
+            $"\nA media da banda {bandasArray[indiceBanda - 1].ToString()} é {media}";
             
         }
     }
